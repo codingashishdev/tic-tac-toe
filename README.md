@@ -72,6 +72,9 @@ The game implements these winning combinations:
 - Vertical: [1,4,7], [2,5,8], [3,6,9]
 - Diagonal: [1,5,9], [3,5,7]
 
+## winning combinations image
+![Winning Combinations](public/Component-1.png)
+
 ## Components
 
 ### App.tsx
