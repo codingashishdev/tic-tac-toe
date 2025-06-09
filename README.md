@@ -1,6 +1,6 @@
 # Tic Tac Toe Game
 
-A modern Tic Tac Toe game built using React.js, TypeScript, and Tailwind CSS.
+A Tic-Tac-Toe game built using React.js, TypeScript, and Tailwind CSS.
 
 ## Features
 
@@ -14,11 +14,8 @@ A modern Tic Tac Toe game built using React.js, TypeScript, and Tailwind CSS.
 
 ## Tech Stack
 
-- **React 19.1.0** - Frontend framework
-- **TypeScript** - Type safety and better development experience
-- **Tailwind CSS 4.1.7** - Utility-first CSS framework for styling
-- **Vite** - Fast build tool and development server
-- **ESLint** - Code linting and formatting
+- **React.js**, **TypeScript**, and **Tailwind CSS** for the frontend
+- **Vite** as the build tool
 
 ## Project Structure
 
@@ -68,9 +65,9 @@ npm run dev
 5. If all squares are filled without a winner, the game ends in a draw
 6. Click "Reset" to start a new game
 
-## Game Logic
+## Game Winning Logic
 
-The game implements the following winning combinations:
+The game implements these winning combinations:
 - Horizontal: [1,2,3], [4,5,6], [7,8,9]
 - Vertical: [1,4,7], [2,5,8], [3,6,9]
 - Diagonal: [1,5,9], [3,5,7]
@@ -90,14 +87,6 @@ Core game component that handles:
 
 ### Square.tsx
 Individual square component that represents each cell in the 3x3 grid.
-
-## Styling
-
-The project uses Tailwind CSS for styling with a clean, modern design featuring:
-- Hover effects on squares
-- Responsive layout
-- Clean typography
-- Interactive buttons
 
 ## Contributing
 

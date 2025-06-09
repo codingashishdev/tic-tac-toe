@@ -5,15 +5,15 @@ function Board() {
     const [squares, setSquares] = useState<(string | null)[]>(
         Array(9).fill(null)
     );
-    
+
     const [player1, setPlayer1] = useState<number[]>([]);
     const [player2, setPlayer2] = useState<number[]>([]);
-    
+
     const [isXNext, setIsXNext] = useState(true);
-    
+
     const [winner, setWinner] = useState("");
     const [draw, setDraw] = useState(false);
-    
+
     const winningPositions = [
         [1, 2, 3],
         [4, 5, 6],
@@ -24,24 +24,24 @@ function Board() {
         [1, 5, 9],
         [3, 5, 7],
     ];
-    
-    useEffect(()=>{
-        if(player1.length >= 3 && match(player1)){
-            setWinner("player1")            
+
+    useEffect(() => {
+        if (player1.length >= 3 && match(player1)) {
+            setWinner("player1");
         }
 
-        if(player2.length >= 3 && match(player2)){
-            setWinner("player2")
+        if (player2.length >= 3 && match(player2)) {
+            setWinner("player2");
         }
 
-        if(squares.every(square => square != null) == true && winner == ""){
-            setDraw(true)
+        if (squares.every((square) => square != null) == true && winner == "") {
+            setDraw(true);
         }
-    }, [player1, player2])
+    }, [player1, player2]);
 
     const match = (player: number[]): boolean => {
-        return winningPositions.some(winningPattern => 
-            winningPattern.every(position => player.includes(position))
+        return winningPositions.some((winningPattern) =>
+            winningPattern.every((position) => player.includes(position))
         );
     };
 
@@ -50,7 +50,9 @@ function Board() {
         if (squares[index]) return;
         const square = [...squares];
         square[index] = isXNext ? "X" : "O";
-        (isXNext) ? setPlayer1([...player1, index + 1]) : setPlayer2([...player2, index + 1]);
+        isXNext
+            ? setPlayer1([...player1, index + 1])
+            : setPlayer2([...player2, index + 1]);
         setSquares(square);
         setIsXNext(!isXNext);
     };
@@ -82,8 +84,12 @@ function Board() {
                         ))}
                     </div>
                 </>
+            ) : draw == false ? (
+                <div className="m-5 text-2xl font-bold">
+                    And the winner is {winner}
+                </div>
             ) : (
-                draw == false ? <div className="m-5 text-2xl font-bold">And the winner is {winner}</div> : <div>Draw</div>
+                <div>Draw</div>
             )}
         </>
     );
